@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div id="header">
+        <h1>MHD.s</h1>
+        <div class="navbar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Founder</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="welcome">
+            <h1>Welcome to MHDs blog</h1>
+            <form action="/upload" method="post">
+                <input type="submit" name="upload" value="Upload" id="tab">    
+            </form>    
+        </div>
+
+        <div class="poster">
+            <% posts.forEach((post, index) => { %>
+                <div class="post">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.content %></p>
+                    <div class="more-opt">
+                        <form action="/delete/<%= index %>" method="post" style="display:inline;">
+                            <input type="submit" name="delete" value="Delete" class="options">
+                        </form>
+                        <form action="/update/<%= index %>" method="get" style="display:inline;">
+                            <input type="submit" name="update" value="Update" class="options">
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 MHD.s Blog</p>
+    </div>  
+    
+</body>
+</html>

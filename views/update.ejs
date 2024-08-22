@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        .uploader{
+            width: 600px;
+            height: 700px;
+            background-color: #adbbda;
+            flex-direction: column;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;   
+        }
+        .form{
+            margin-top: 100px;
+        }
+        #title{
+            width: 400px;
+            height: 60px;
+            border-radius: 10px;
+            border: none;
+         
+        }
+        #content{
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+            
+        }
+        .container{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+       }
+       #btn{
+        margin-top: 10px;
+        background-color: #3d52a0;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        width: 400px;
+        height: 50px;
+       }
+    </style>
+</head>
+<body>
+
+   <div class="container">
+    <div class="uploader">
+        <form class="form" action="/create" method="post">
+            <h1>Update your post</h1>
+            <input id="title" type="text" name="title" value="<%= title %>" required>
+            <textarea id="content" name="content"  required><%= content %></textarea>
+            <button id="btn" type="submit">Submit</button>
+        </form>
+       </div>
+   </div>
+    
+</body>
+</html>
